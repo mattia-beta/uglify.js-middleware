@@ -83,8 +83,7 @@ describe("Express", function() {
         .set("accept", "application/javascript")
         .expect(200)
         .expect("content-type", /application\/javascript/)
-        // Not yet implemented in uglifyjs2
-        //.expect(scriptOut + "\n//@ sourceMappingURL=" + tempFileMap)
+        .expect(scriptOut + "\n//@ sourceMappingURL=" + tempFileMap)
         .expect(scriptOut)
         .end(done);
     };
