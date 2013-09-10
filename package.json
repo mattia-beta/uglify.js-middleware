@@ -16,12 +16,16 @@
     "url": "https://github.com/Zweer/uglify.js-middleware.git"
   },
   "main": "lib/middleware.js",
+  "scripts": {
+    "test": "mocha test/*"
+  },
   "dependencies": {
     "uglify-js": "2.x",
     "colors": "*"
   },
   "devDependencies": {
-
+    "mocha": "*",
+    "express": "*"
   },
   "engines": {
     "node": ">=0.10.0"
