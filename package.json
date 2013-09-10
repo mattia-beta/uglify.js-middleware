@@ -17,7 +17,7 @@
   },
   "main": "lib/middleware.js",
   "dependencies": {
-    "uglify-js": "2.*"
+    "uglify-js": "2.x"
   },
   "devDependencies": {
 
