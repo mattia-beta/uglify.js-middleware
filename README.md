@@ -24,12 +24,12 @@ Package mode:
     <tbody>
         <tr>
             <td><code>src</code></td>
-            <td></td>
+            <td>The directory where the source <code>.js</code> files are stored. <strong>Required</strong></td>
             <td></td>
         </tr>
         <tr>
             <td><code>dest</code></td>
-            <td></td>
+            <td>The directory where the compiled <code>.min.js</code> files are stored. If not spcified, it is the same as the <code>src</code> directory.</td>
             <td>=<code>src</code></td>
         </tr>
         <tr>
