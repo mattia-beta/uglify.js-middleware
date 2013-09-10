@@ -2,7 +2,12 @@
 
 ## Installation
 
+Npm mode:
     npm install zwe-uglifyjs-middleware
+Package mode:
+    "dependencies": {
+        "zwe-uglifyjs-middleware": "*"
+    }
 
 ## Options
 
