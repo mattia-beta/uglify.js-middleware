@@ -84,7 +84,6 @@ describe("Express", function() {
         .expect(200)
         .expect("content-type", /application\/javascript/)
         .expect(scriptOut + "\n//@ sourceMappingURL=" + tempFileMap)
-        .expect(scriptOut)
         .end(done);
     };
 
