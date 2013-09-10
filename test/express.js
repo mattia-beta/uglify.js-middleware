@@ -9,9 +9,9 @@ temp.dir = __dirname;
 temp.track();
 
 var tempDir
-  , tempFileFull = 'tmp.js'
-  , tempFileMin  = 'tmp.min.js'
-  , tempFileMap  = 'tmp.map.js';
+  , tempFileFull = '/tmp.js'
+  , tempFileMin  = '/tmp.min.js'
+  , tempFileMap  = '/tmp.map.js';
 
 var express = require('express');
 
@@ -25,13 +25,15 @@ before(function (done) {
     }
 
     tempDir = dirPath;
-    console.log(tempDir);
 
     app = express();
 
-    app.use(require('../lib/middleware')({ src: tempDir }));
+    app.use(require('../lib/middleware')({
+      src: tempDir,
+      debug: true
+    }));
     app.use(express.static(tempDir));
-    app.use(function (req, res) { res.statusCode = 404; res.end('Not Found'); });
+    app.use(function (req, res) { res.statusCode = 404; res.end('Not found'); });
     app.use(function (err, req, res, next) { console.error(err); res.statusCode = 500; res.end('Internal Server Error') });
 
     request = require('supertest')(app);
