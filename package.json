@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "express": "*"
+    "express": "*",
+    "supertest": "*"
   },
   "engines": {
     "node": ">=0.10.0"
