@@ -59,3 +59,24 @@ Package mode:
         </tr>
     </tbody>
 </table>
+
+## Examples
+
+### Connect
+
+    var server = connect.createServer(
+        require('zwe-uglifyjs-middleware')({
+            src: __dirname + '/public'
+        }),
+        connect.staticProvider(__dirname + '/public')
+    );
+
+### Express
+
+    var app = express.createServer();
+
+    app.use(require('zwe-uglifyjs-middleware')({
+        src: __dirname + '/public'
+    });
+
+    app.use(express.static(__dirname + '/public'));
