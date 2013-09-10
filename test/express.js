@@ -42,11 +42,11 @@ before(function (done) {
   });
 });
 
-describe("Express", function() {
-  var scriptIn = "function foo() { }";
-  var scriptOut = "function foo(){}";
+describe('Express', function() {
+  var scriptIn = 'function foo() { }';
+  var scriptOut = 'function foo(){}';
 
-  it("should not change the original file", function(done) {
+  it('should not change the original file', function(done) {
 
     var setup = function() {
       fs.writeFile(path.join(tempDir, tempFileFull), scriptIn, testRequest);
@@ -58,9 +58,9 @@ describe("Express", function() {
       }
 
       request.get(tempFileFull)
-        .set("accept", "application/javascript")
+        .set('accept', 'application/javascript')
         .expect(200)
-        .expect("content-type", /application\/javascript/)
+        .expect('content-type', /application\/javascript/)
         .expect(scriptIn)
         .end(done);
     };
@@ -68,7 +68,7 @@ describe("Express", function() {
     setup();
   });
 
-  it("should automatically minify javascript file", function(done) {
+  it('should automatically minify javascript file', function(done) {
 
     var setup = function() {
       fs.writeFile(path.join(tempDir, tempFileFull), scriptIn, testRequest);
@@ -80,17 +80,17 @@ describe("Express", function() {
       }
 
       request.get(tempFileMin)
-        .set("accept", "application/javascript")
+        .set('accept', 'application/javascript')
         .expect(200)
-        .expect("content-type", /application\/javascript/)
-        .expect(scriptOut + "\n//@ sourceMappingURL=" + tempFileMap)
+        .expect('content-type', /application\/javascript/)
+        .expect(scriptOut + "\n" + '//@ sourceMappingURL=' + tempFileMap)
         .end(done);
     };
 
     setup();
   });
 
-  it("should automatically create a source map", function(done) {
+  it('should automatically create a source map', function(done) {
 
     var setup = function() {
       fs.writeFile(path.join(tempDir, tempFileFull), scriptIn, testRequest);
@@ -102,9 +102,9 @@ describe("Express", function() {
       }
 
       request.get(tempFileMap)
-        .set("accept", "application/javascript")
+        .set('accept', 'application/javascript')
         .expect(200)
-        .expect("content-type", /application\/javascript/)
+        .expect('content-type', /application\/javascript/)
         .end(done);
     };
 
