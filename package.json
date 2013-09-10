@@ -1,6 +1,6 @@
 {
-  "name"   : "ya-uglifyjs-middleware",
-  "version": "0.0.1",
+  "name"   : "zwe-uglifyjs-middleware",
+  "version": "0.2.0",
   "author": "Niccolò Olivieri <flicofloc@gmail.com>",
   "description": "Yet another uglify.js middleware for connect/express",
   "keywords": [
