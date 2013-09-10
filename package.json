@@ -1,0 +1,28 @@
+{
+  "name"   : "ya-uglifyjs-middleware",
+  "version": "0.0.1",
+  "author": "Niccolò Olivieri <flicofloc@gmail.com>",
+  "description": "Yet another uglify.js middleware for connect/express",
+  "keywords": [
+    "minify",
+    "uglifyjs",
+    "uglifyjs2",
+    "middleware",
+    "connect",
+    "express"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zweer/uglify.js-middleware.git"
+  },
+  "main": "lib/middleware.js",
+  "dependencies": {
+    "uglify-js": "2.*"
+  },
+  "devDependencies": {
+
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
