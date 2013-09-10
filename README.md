@@ -3,8 +3,10 @@
 ## Installation
 
 Npm mode:
+
     npm install zwe-uglifyjs-middleware
 Package mode:
+
     "dependencies": {
         "zwe-uglifyjs-middleware": "*"
     }
@@ -28,7 +30,7 @@ Package mode:
         <tr>
             <td><code>dest</code></td>
             <td></td>
-            <td></td>
+            <td>=<code>src</code></td>
         </tr>
         <tr>
             <td><code>debug</code></td>
