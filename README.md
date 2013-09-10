@@ -29,32 +29,32 @@ Package mode:
         </tr>
         <tr>
             <td><code>dest</code></td>
-            <td>The directory where the compiled <code>.min.js</code> files are stored. If not spcified, it is the same as the <code>src</code> directory.</td>
+            <td>The directory where the compiled <code>.min.js</code> files are stored. If not specified, it is the same as the <code>src</code> directory.</td>
             <td>=<code>src</code></td>
         </tr>
         <tr>
             <td><code>debug</code></td>
-            <td></td>
+            <td>Output any debugging messages to the console.</td>
             <td><code>false</code></td>
         </tr>
         <tr>
             <td><code>force</code></td>
-            <td></td>
+            <td>Always re-compile <code>.js</code> files on each request.</td>
             <td><code>false</code></td>
         </tr>
         <tr>
             <td><code>once</code></td>
-            <td></td>
+            <td>Only check for need to recompile once after each server restart. Useful for reducing disk i/o on production.</td>
             <td><code>false</code></td>
         </tr>
         <tr>
             <td><code>generateSourceMap</code></td>
-            <td></td>
+            <td>If it should also generate the <code>.map.js</code> file to use in browser debug.</td>
             <td><code>false</code></td>
         </tr>
         <tr>
             <td><code>uglifyjs</code></td>
-            <td></td>
+            <td>The object with options to pass to the uglifyJS constructor.</td>
             <td><code>{}</code></td>
         </tr>
     </tbody>
