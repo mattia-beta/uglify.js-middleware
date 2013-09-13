@@ -9,6 +9,7 @@ temp.dir = __dirname;
 temp.track();
 
 var tempDir
+  , srcDir
   , tempFileFull = '/tmp.js'
   , tempFileMin  = '/tmp.min.js'
   , tempFileMap  = '/tmp.map.js';
@@ -19,26 +20,35 @@ var app
   , request;
 
 before(function (done) {
-  temp.mkdir('tmp-', function (err, dirPath) {
+  temp.mkdir('src-', function (err, dirPath) {
     if (err) {
       throw(err);
     }
 
-    tempDir = dirPath;
+    srcDir = dirPath;
 
-    app = express();
+    temp.mkdir('tmp-', function (err, dirPath) {
+      if (err) {
+        throw(err);
+      }
 
-    app.use(require('../lib/middleware')({
-      src: tempDir,
-      generateSourceMap: true
-    }));
-    app.use(express.static(tempDir));
-    app.use(function (req, res) { res.statusCode = 404; res.end('Not found'); });
-    app.use(function (err, req, res, next) { console.error(err); res.statusCode = 500; res.end('Internal Server Error') });
+      tempDir = dirPath;
 
-    request = require('supertest')(app);
+      app = express();
 
-    done();
+      app.use(require('../lib/middleware')({
+        src: srcDir,
+        dest: tempDir,
+        generateSourceMap: true
+      }));
+      app.use(express.static(tempDir));
+      app.use(function (req, res) { res.statusCode = 404; res.end('Not found'); });
+      app.use(function (err, req, res, next) { console.error(err); res.statusCode = 500; res.end('Internal Server Error') });
+
+      request = require('supertest')(app);
+
+      done();
+    });
   });
 });
 
@@ -49,7 +59,7 @@ describe('Express', function() {
   it('should not change the original file', function(done) {
 
     var setup = function() {
-      fs.writeFile(path.join(tempDir, tempFileFull), scriptIn, testRequest);
+      fs.writeFile(path.join(srcDir, tempFileFull), scriptIn, testRequest);
     };
 
     var testRequest = function(err) {
@@ -71,7 +81,7 @@ describe('Express', function() {
   it('should automatically minify javascript file', function(done) {
 
     var setup = function() {
-      fs.writeFile(path.join(tempDir, tempFileFull), scriptIn, testRequest);
+      fs.writeFile(path.join(srcDir, tempFileFull), scriptIn, testRequest);
     };
 
     var testRequest = function(err) {
@@ -93,7 +103,7 @@ describe('Express', function() {
   it('should automatically create a source map', function(done) {
 
     var setup = function() {
-      fs.writeFile(path.join(tempDir, tempFileFull), scriptIn, testRequest);
+      fs.writeFile(path.join(srcDir, tempFileFull), scriptIn, testRequest);
     };
 
     var testRequest = function(err) {

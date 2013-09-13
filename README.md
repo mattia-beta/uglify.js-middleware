@@ -39,8 +39,8 @@ Package mode:
         </tr>
         <tr>
             <td><code>compress</code></td>
-            <td>Compress the output. If <code>false</code> it doesn't do anything but moving the file to <code>dest</code>.</td>
-            <td><code>true</code></td>
+            <td>Force the compression of the output.<br>Possible values:<ul><li><code>false</code>: never compress output;</li><li><code>true</code>: always compress output;</li><li><code>'auto'</code>: compress output depending on the extension (<code>.min.js</code> or <code>.js</code>.</li></ul></td>
+            <td><code>'auto'</code></td>
         </tr>
         <tr>
             <td><code>debug</code></td>
