@@ -38,6 +38,11 @@ Package mode:
             <td></td>
         </tr>
         <tr>
+            <td><code>compress</code></td>
+            <td>Compress the output. If <code>false</code> it doesn't do anything but moving the file to <code>dest</code>.</td>
+            <td><code>true</code></td>
+        </tr>
+        <tr>
             <td><code>debug</code></td>
             <td>Output any debugging messages to the console.</td>
             <td><code>false</code></td>
