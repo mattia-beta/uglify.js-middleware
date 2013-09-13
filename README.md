@@ -33,6 +33,11 @@ Package mode:
             <td>=<code>src</code></td>
         </tr>
         <tr>
+            <td><code>prefix</code></td>
+            <td>Path which should be stripped from the <code>public</code> pathname.</td>
+            <td></td>
+        </tr>
+        <tr>
             <td><code>debug</code></td>
             <td>Output any debugging messages to the console.</td>
             <td><code>false</code></td>

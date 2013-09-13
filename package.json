@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "uglify-js": "2.x",
-    "colors": "*"
+    "colors": "*",
+    "mkdirp": "~0.3"
   },
   "devDependencies": {
     "mocha": "*",
